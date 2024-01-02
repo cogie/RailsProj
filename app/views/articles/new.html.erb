@@ -1,31 +1,7 @@
-# used a From Builder to create new datas
-<h1> New Article </h1>
 
-# uses form with helper to instantiates a form builder
-<%= form_with model: @article do |form| %>
-    <div>
-        <%= form.label :title %> <br>
-        <%= form.text_field :title %> <br>
-        <% @article.errors.full_messages_for(:title).each do |message| %>
-            <div>
-                <%= message %>
-            </div>
-        <% end %>
-    </div>
+<h1>New Article</h1>
 
-    <div>
-        <%= form.label :body %> <br>
-        <%= form.text_area :body %> <br>
-        <% @article.errors.full_messages_for(:body).each do |message| %>
-            <div>
-                <%= message %>
-            </div>
-        <% end %>
-    </div>
+<%= render "form", article: @article %>
 
-    <div>
-        <%= form.submit %>
-    </div>
-<% end %>
 
 
